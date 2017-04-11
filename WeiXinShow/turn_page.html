@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手机翻页</title>
+	<meta charset="utf-8" name = "viewport" content = "width = device-width, initial-scale = 1.0 , user-scalable = no">
+	<script type="text/javascript" src = "js/zepto.js"></script><!-- jq删减版 -->
+	<script type="text/javascript" src = "js/zepto-touch.js"></script>
+	
+	<script type="text/javascript" src = "js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src = "js/swiper.animate1.0.2.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.container{
+			
+			 position:relative;
+			overflow: hidden;
+			height: 100%;
+			width: 100%;
+
+
+		}
+		.box{
+			height: 100%;
+			width: 100%;
+		}
+		 
+		.slider1,.slider2,.slider3,.slider4,.slider5,.slider6,.slider7,.slider8,.slider8,.slider9,.slider10,.slider11{
+			width: 100%;
+			height: 100%;
+
+		}
+
+		.slider1{
+			background: blue;
+			overflow: hidden;
+		}
+
+		.slider2{
+			background: red;
+			overflow: hidden;
+			position:relative;
+		}
+
+		.slider3{
+			background: orange;
+			overflow: hidden;
+			position:relative;
+		}
+
+		.slider4{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+		}
+		.slider5{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+		}
+		.slider6{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		.slider7{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		.slider8{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		.slider9{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		.slider10{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		.slider11{
+			background: pink;
+			overflow: hidden;
+			position:relative;
+
+		}
+		 .up{
+			font-size:100px;
+			font-weight: 900;
+			color: white;
+			filter: alpha(opacity = 50);
+			opacity: 0.5;
+			position: absolute;
+			bottom:5%;
+			left: 40%;
+			z-index: 5;
+			animation: ani 1s linear infinite alternate;
+			height: 50px;
+			 
+		
+		}
+
+		@keyframes ani{
+			0%{
+				bottom: 2%;
+			}
+			100%{
+				bottom: 5%;
+			}
+		}
+
+		.pic{
+			width: 100%;
+			height: 100%;
+		}
+		 
+		.right_pic{
+			position: absolute;
+			top:0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+		 
+		} 
+		.pic2{
+			height: 100%;
+			width:100%; 
+		}
+
+
+		.pic_in{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top:0%;
+			left: 0%;
+		}
+		.pic3{
+			height: 100%;
+			width: 100%;
+		}
+		.slider2_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider2_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider2_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider2_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider2_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+
+
+	.slider3_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider3_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider3_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider3_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider3_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		
+
+
+
+
+		.slider4_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider4_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider4_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider4_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider4_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		
+
+
+
+
+
+		.slider5_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider5_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider5_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider5_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider5_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+		.slider6_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider6_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider6_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider6_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider6_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+		.slider7_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider7_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider7_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider7_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider7_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+
+
+
+		.slider8_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider8_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider8_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider8_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider8_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+
+
+
+		.slider9_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider9_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider9_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider9_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider9_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+
+		.slider10_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider10_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider10_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider10_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider10_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+
+		.slider11_pic{
+
+			height: 100%;
+			width: 100%;
+		}
+		.slider11_right_pic{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top:0;
+		}
+		.slider11_right_pic img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider11_pic_in img{
+			height: 100%;
+			width: 100%;
+		}
+		.slider11_pic_in{
+			left: 0;
+			top: 0;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class = "container">
+
+		
+		<p class="up">^</p> 
+		<div class="swiper-container box">
+
+		    <div class="swiper-wrapper">
+
+		        <div class="swiper-slide slider1">
+		        	
+		        	<img src="img/corner_1.jpg" class = "pic"/>
+		        	<p class="ani right_pic" swiper-animate-effect="bounceInRight" swiper-animate-duration="2s" swiper-animate-delay="0.3s"> 
+		        		<img src="img/corner_title_1.png" class="pic2"/>
+		        	  </p>
+
+
+						
+						<p class="ani pic_in" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s"> 
+		        		 <img src="img/corner_mark_1.png" class="pic3"> 
+		        	  </p>
+
+
+
+
+		        	 
+		        </div>
+
+		        <div class="swiper-slide slider2">
+					
+					<img src = "img/corner_2.jpg" class = "slider2_pic"/>
+					<p class = "ani slider2_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+						<img src = "img/corner_mark_2.png" class="slider2_pic2"/>
+					</p>
+
+
+					<p class = "ani slider2_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+						
+						<img src = "img/corner_title_2.png"/>
+
+					</p>
+			        
+		        </div>
+
+		        <div class="swiper-slide slider3">
+
+		        	<img src = "img/corner_3.jpg" class = "slider3_pic"/>
+					<p class = "ani slider3_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+						<img src = "img/corner_mark_3.png" class="slider3_pic2"/>
+					</p>
+
+
+					<p class = "ani slider3_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+						
+						<img src = "img/corner_title_3.png"/>
+
+					</p>
+
+		        </div>
+
+		        <div class = "swiper-slide slider4">
+
+
+			        <img src = "img/corner_4.jpg" class = "slider4_pic"/>
+						<p class = "ani slider4_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/corner_mark_4.png" class="slider4_pic2"/>
+						</p>
+
+
+						<p class = "ani slider4_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/corner_title_4_1.png"/>
+
+						</p>
+
+
+		         </div>
+				
+
+
+
+
+				<div class = "swiper-slide slider5">
+
+
+			        <img src = "img/corner_5.jpg" class = "slider5_pic"/>
+						<p class = "ani slider5_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/corner_mark_5.png" class="slider5_pic2"/>
+						</p>
+
+
+						<p class = "ani slider5_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/corner_title_5.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+
+
+
+
+
+		         <div class = "swiper-slide slider6">
+
+
+			        <img src = "img/light_1.jpg" class = "slider6_pic"/>
+						<p class = "ani slider6_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/light_mark_1.png" class="slider6_pic2"/>
+						</p>
+
+
+						<p class = "ani slider6_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/light_title_1.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+
+
+
+
+
+
+		         <div class = "swiper-slide slider7">
+
+
+			        <img src = "img/light_2.jpg" class = "slider7_pic"/>
+						<p class = "ani slider7_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/light_mark_2.png" class="slider7_pic2"/>
+						</p>
+
+
+						<p class = "ani slider7_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/light_title_2.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+
+
+
+
+
+
+		         <div class = "swiper-slide slider8">
+
+
+			        <img src = "img/light_3.jpg" class = "slider8_pic"/>
+						<p class = "ani slider8_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/light_mark_3.png" class="slider8_pic2"/>
+						</p>
+
+
+						<p class = "ani slider8_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/light_title_3.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+
+
+
+
+		         <div class = "swiper-slide slider9">
+
+
+			        <img src = "img/light_4.jpg" class = "slider9_pic"/>
+						<p class = "ani slider9_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/light_mark_4.png" class="slider9_pic2"/>
+						</p>
+
+
+						<p class = "ani slider9_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/light_title_4.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+				<div class = "swiper-slide slider10">
+
+
+			        <img src = "img/computer_1.jpg" class = "slider10_pic"/>
+						<p class = "ani slider10_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/computer_mark_1.png" class="slider10_pic2"/>
+						</p>
+
+
+						<p class = "ani slider10_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/computer_title_1.png"/>
+
+						</p>
+
+
+		         </div>
+
+
+
+
+
+		         <div class = "swiper-slide slider11">
+
+
+			        <img src = "img/computer_2.jpg" class = "slider11_pic"/>
+						<p class = "ani slider11_right_pic"  swiper-animate-effect="bounceIn " swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							<img src = "img/computer_mark_2.png" class="slider11_pic2"/>
+						</p>
+
+
+						<p class = "ani slider11_pic_in" swiper-animate-effect="bounceInRight" swiper-animate-duration="5s" swiper-animate-delay="0.3s">
+							
+							<img src = "img/computer_title_2.png"/>
+
+						</p>
+
+
+		         </div>
+
+			 
+		    </div>
+		   
+		</div>
+
+		 
+	</div>
+	<script type="text/javascript">
+		$(function(){
+
+
+
+
+			 var mySwiper = new Swiper ('.swiper-container', {
+			  onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+			    swiperAnimateCache(swiper); //隐藏动画元素 
+			    swiperAnimate(swiper); //初始化完成开始动画
+			  }, 
+			  onSlideChangeEnd: function(swiper){ 
+			    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			  }, 
+			  direction:'vertical',
+			  })        
+
+
+
+
+
+
+			 
+		})
+	</script>
+</body>
+</html>
